@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 class ScheduleController extends Controller
 {
     public function index(){
-        $schedules = Schedule::where('user_id', '=' , Auth::id())->get();
+        $schedules = Schedule::all();
+        //$schedules = Schedule::where('user_id', '=' , Auth::id())->get();
 
         return view('schedule.index', compact('schedules'));
     }
