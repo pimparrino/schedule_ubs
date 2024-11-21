@@ -23,7 +23,7 @@ class ScheduleController extends Controller
         Schedule::create(
             [
                 'exam' => $request->exam,
-                'date' => $request->date,
+                'request_date' => $request->date,
                 'user_id' => Auth::id()
             ]
             );
