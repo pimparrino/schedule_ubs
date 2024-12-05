@@ -34,3 +34,5 @@ Route::post('/doctor/store', [DoctorController::class, 'store'])->middleware(['a
 
 
 require __DIR__.'/auth.php';
+
+require __DIR__.'/patient-auth.php';

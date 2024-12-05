@@ -1,6 +1,6 @@
 <x-guest-layout>
-    <h4 class="text-center mb-3">Registrar-se como Usuário</h4>
-    <form method="POST" action="{{ route('register') }}">
+    <h4 class="text-center mb-3">Registrar-se como Paciente</h4>
+    <form method="POST" action="{{ route('patient.register') }}">
         @csrf
 
         <!-- Name -->
