@@ -9,7 +9,7 @@
         <main>
             <section>
 
-                <form action="/schedule/store" method="POST">
+                <form action="/schedule.store" method="POST">
                     @csrf
 
                     <div>

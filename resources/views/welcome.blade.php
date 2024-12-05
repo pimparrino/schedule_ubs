@@ -237,10 +237,17 @@
 
         .equipe-photo {
             width: 100%;
-            height: auto;
-            display: block;
-        }
+            aspect-ratio: 9/16; /* Mantém proporção de 16:9 */
+            object-fit: cover; /* Garante que a imagem preencha o espaço */
+            border-radius: 12px; /* Bordas arredondadas */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de transição */
+}
 
+        .equipe-photo:hover {
+            transform: scale(1.05); /* Ampliação leve ao passar o mouse */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}
         .equipe-name {
             font-size: 20px;
             font-weight: bold;

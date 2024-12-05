@@ -18,7 +18,7 @@
 
                 <article>
                     <h2>Agendamentos</h2>
-                    <table>
+                    <table class="minhatabela">
                         <thead>
                             <tr>
                                 <th>ID</th>

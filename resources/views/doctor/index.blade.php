@@ -18,7 +18,7 @@
 
                 <article>
                     <h2>Médicos</h2>
-                    <table>
+                    <table class="minhatabela">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -35,7 +35,7 @@
                                 <td>{{ $doctor->name }}</td>
                                 <td>{{ $doctor->specialism }}</td>
                                 <td>{{ $doctor->crm }}</td>
-                                <td>{{ $doctor->ubs_id }}</td>
+                                <td>{{ $doctor->ubs->name }}</td>
                             </tr>
                             @endforeach
                         </tbody>

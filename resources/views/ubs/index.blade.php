@@ -18,13 +18,14 @@
 
                 <article>
                     <h2>Ubs</h2>
-                    <table>
+                    <table class="minhatabela">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
                                 <th>Endereço</th>
                                 <th>Telefone</th>
+                                <th>Médicos</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,6 +35,7 @@
                                 <td>{{ $unidade->name }}</td>
                                 <td>{{ $unidade->address }}</td>
                                 <td>{{ $unidade->phone }}</td>
+                                <td>{{ $unidade->doctors->count() }}</td>
                             </tr>
                             @endforeach
                         </tbody>
