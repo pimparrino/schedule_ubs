@@ -33,11 +33,11 @@ Route::get('/ubs', [UbsController::class, 'index'])->middleware(['auth'])->name(
 Route::get('/ubs/create', [UbsController::class, 'create'])->middleware(['auth'])->name('ubs.create');
 Route::post('/ubs/store', [UbsController::class, 'store'])->middleware(['auth'])->name('ubs.store');
 
-Route::get('/doctor', [DoctorController::class, 'index'])->middleware(['auth'])->name('doctor.index');
-Route::get('/doctor/create', [DoctorController::class, 'create'])->middleware(['auth'])->name('doctor.create');
+Route::get('/doctor', [DoctorController::class, 'index'])->middleware(['auth'])->can('isAttendant')->name('doctor.index');
+Route::get('/doctor/create', [DoctorController::class, 'create'])->middleware(['auth'])->can('isAttendant')->name('doctor.create');
 Route::post('/doctor/store', [DoctorController::class, 'store'])->middleware(['auth'])->name('doctor.store');
 
-Route::middleware(['auth', 'role:attendant'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/attendant/requests', [AppointmentController::class, 'pendingRequests'])->name('attendant.requests');
 });
 
@@ -53,3 +53,4 @@ Route::middleware('auth')->group(function () {
 
 
 require __DIR__.'/auth.php';
+

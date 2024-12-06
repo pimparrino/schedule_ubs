@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <h4 class="text-center mb-3">Registrar-se como Usuário</h4>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -44,6 +45,7 @@
             <select id="role" name="role" required>
                 <option value="patient">Paciente</option>
                 <option value="doctor">Médico</option>
+                <option value="attendant">Atendente</option>
             </select>
         </div>
 

@@ -2,6 +2,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <h4 class="text-center mb-3">Login como Usuário</h4>
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
@@ -31,6 +32,7 @@
                 <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
             </label>
         </div>
+
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
