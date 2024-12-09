@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('exam');
-            $table->date('request_date');
             $table->foreignId('user_id');
+            $table->string('specialism');
+            $table->foreignId('doctor_id')->nullable();
+            $table->foreignId('ubs_id')->nullable();
+            $table->date('date')->nullable();
+            $table->enum('status', ['pendente', 'confirmado', 'cancelado'])->default('pendente');
             $table->timestamps();
         });
     }

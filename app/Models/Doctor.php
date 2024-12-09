@@ -18,4 +18,8 @@ class Doctor extends Model
     public function ubs(){
         return $this->belongsTo(Ubs::class, 'ubs_id');
     }
+
+    public function schedules(){
+        return $this->hasMany(Schedule::class, 'doctor_id');
+    }
 }

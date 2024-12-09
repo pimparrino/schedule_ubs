@@ -17,4 +17,8 @@ class Ubs extends Model
     public function doctors(){
         return $this->hasMany(Doctor::class, 'id');
     }
+
+    public function schedules(){
+        return $this->hasMany(Schedule::class);
+    }
 }

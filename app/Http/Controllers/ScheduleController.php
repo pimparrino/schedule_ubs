@@ -22,11 +22,45 @@ class ScheduleController extends Controller
     public function store(Request $request){
         Schedule::create(
             [
-                'exam' => $request->exam,
-                'request_date' => $request->date,
-                'user_id' => Auth::id()
+                'user_id' => Auth::id(),
+                'specialism' => $request->specialism,
+                //'doctor_id' => $request->doctor_id,
+                //'ubs_id' => $request->ubs_id,
+                //'date' => $request->date,
+                'status' => 'pendente',
             ]
             );
-        return redirect('/schedule');
+        return redirect('/schedule')->with('success', 'Agendamento criado com sucesso!');
+    }
+
+    public function edit($id){
+        $schedule = Schedule::findOrFail($id);
+
+        return view('schedule.edit', compact('task'));
+    }
+
+    public function update(Request $request, $id){
+        $request->validate([
+            'doctor_id' => 'required|exists:doctors,id',
+            'ubs_id' => 'required|exists:ubs,id',
+            'date' => 'required'
+        ]);
+
+        $schedule = Schedule::findOrFail($id);
+
+        $schedule->update([
+            'doctor_id' => $request->doctor_id,
+            'ubs_id' => $request->ubs_id,
+            'date' => $request->date,
+            'status' => 'confirmado'
+        ]);
+
+        return redirect('/schedule')->with('sucess', 'Agendamento confirmado!');
+    }
+
+    public function pending(){
+        $schedule = Schedule::where('status', 'pendente')->get();
+
+        return view('schedule.pending', compact('schedule'));
     }
 }

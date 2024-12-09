@@ -1,7 +1,7 @@
 <x-app-layout>
-    <x-slot name="header">
+    <x-slot>
         <h2>
-            {{ __('Histórico de Agendamentos') }}
+            {{ __('Solicitações Pendentes') }}
         </h2>
     </x-slot>
 
@@ -9,16 +9,9 @@
         
         <main>
             <section>
-
-                <div>
-                    <a href="/schedule/create">
-                        Agendar Consulta
-                    </a>
-                </div>
-
                 <article>
-                    <h2>Agendamentos</h2>
-                    <table class="minhatabela">
+                    <h2>Agendamentos Pendentes</h2>
+                    <table class="tabelapendente">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -27,6 +20,7 @@
                                 <th>Ubs</th>
                                 <th>Data</th>
                                 <th>Status</th>
+                                <th>Atualizar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,6 +32,7 @@
                                 <td>{{ $schedule->ubs_id }}</td>
                                 <td>{{ $schedule->date }}</td>
                                 <td>{{ $schedule->status }}</td>
+                                <td><a href="{{route('schedule.edit', $schedule->id)}}">Confirmar Agendamento</a></td>
                             </tr>
                             @endforeach
                         </tbody>

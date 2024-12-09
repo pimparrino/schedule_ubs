@@ -9,17 +9,12 @@
         <main>
             <section>
 
-                <form action="/schedule.store" method="POST">
+                <form action="/schedule/store" method="POST">
                     @csrf
 
                     <div>
-                        <label for="exam">Exame:</label>
-                        <input type="text" name="exam" id="exam">
-                    </div>
-
-                    <div>
-                        <label for="request_date">Data:</label>
-                        <input type="date" name="date" id="date">
+                        <label for="specialism">Especialista:</label>
+                        <input type="text" name="specialism" id="specialism" placeholder="Digite qual especialista deseja consultar(ex: dentista)">
                     </div>
 
                     <div>
