@@ -24,9 +24,6 @@ class ScheduleController extends Controller
             [
                 'user_id' => Auth::id(),
                 'specialism' => $request->specialism,
-                //'doctor_id' => $request->doctor_id,
-                //'ubs_id' => $request->ubs_id,
-                //'date' => $request->date,
                 'status' => 'pendente',
             ]
             );
@@ -36,7 +33,7 @@ class ScheduleController extends Controller
     public function edit($id){
         $schedule = Schedule::findOrFail($id);
 
-        return view('schedule.edit', compact('task'));
+        return view('schedule.edit', compact('schedules'));
     }
 
     public function update(Request $request, $id){
@@ -59,8 +56,10 @@ class ScheduleController extends Controller
     }
 
     public function pending(){
-        $schedule = Schedule::where('status', 'pendente')->get();
+        dd("chegou");
+        
+        $schedules = Schedule::where('status', 'pendente')->get();
 
-        return view('schedule.pending', compact('schedule'));
+        return view('schedule.pending', compact('schedules'));
     }
 }

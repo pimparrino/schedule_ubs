@@ -6,7 +6,6 @@
     </x-slot>
 
     <body>
-        
         <main>
             <section>
                 <article>
