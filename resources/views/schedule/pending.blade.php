@@ -10,10 +10,10 @@
             <section>
                 <article>
                     <h2>Agendamentos Pendentes</h2>
-                    <table class="tabelapendente">
+                    <table class="minhatabela">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Paciente</th>
                                 <th>Especialista</th>
                                 <th>Médico</th>
                                 <th>Ubs</th>
@@ -25,7 +25,7 @@
                         <tbody>
                             @foreach($schedules as $schedule)
                             <tr>
-                                <td>{{ $schedule->id }}</td>
+                                <td>{{ $schedule->user->name }}</td>
                                 <td>{{ $schedule->specialism }}</td>
                                 <td>{{ $schedule->doctor_id }}</td>
                                 <td>{{ $schedule->ubs_id }}</td>
