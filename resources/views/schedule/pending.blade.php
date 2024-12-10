@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot>
+    <x-slot  name="header">
         <h2>
             {{ __('Solicitações Pendentes') }}
         </h2>

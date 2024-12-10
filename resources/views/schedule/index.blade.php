@@ -21,23 +21,20 @@
                     <table class="minhatabela">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Especialista</th>
                                 <th>Médico</th>
-                                <th>Ubs</th>
+                                <th>Especialidade</th>
                                 <th>Data</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($schedules as $schedule)
+                            @foreach($user->doctorAsParticipantSchedule as $schedule)
+
                             <tr>
-                                <td>{{ $schedule->id }}</td>
+                                <td>{{ $schedule->name }}</td>
                                 <td>{{ $schedule->specialism }}</td>
-                                <td>{{ $schedule->doctor_id }}</td>
-                                <td>{{ $schedule->ubs_id }}</td>
-                                <td>{{ $schedule->date }}</td>
-                                <td>{{ $schedule->status }}</td>
+                                <td>{{ $schedule->pivot->date }}</td>
+                                <td>{{ $schedule->pivot->status }}</td>
                             </tr>
                             @endforeach
                         </tbody>

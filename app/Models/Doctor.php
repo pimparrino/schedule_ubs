@@ -16,10 +16,10 @@ class Doctor extends Model
     ];
 
     public function ubs(){
-        return $this->belongsTo(Ubs::class, 'ubs_id');
+        return $this->belongsTo(Ubs::class, 'schedules');
     }
 
     public function schedules(){
-        return $this->hasMany(Schedule::class, 'doctor_id');
+        return $this->belongsToMany(Schedule::class, 'schedules');
     }
 }
