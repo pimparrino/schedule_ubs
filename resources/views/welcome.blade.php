@@ -349,32 +349,32 @@
     <div class="equipe-container">
         <div class="equipe-item">
             <img src="img/integrante1.jpg" alt="Foto de Integrante 1" class="equipe-photo">
-            <h3 class="equipe-name">Integrante 1</h3>
+            <h3 class="equipe-name">Tatiana Sobral</h3>
             <p class="equipe-role">Desenvolvedor Frontend</p>
         </div>
         <div class="equipe-item">
             <img src="img/integrante2.jpg" alt="Foto de Integrante 2" class="equipe-photo">
-            <h3 class="equipe-name">Integrante 2</h3>
+            <h3 class="equipe-name">Gustavo Zanon</h3>
             <p class="equipe-role">Desenvolvedor Backend</p>
         </div>
         <div class="equipe-item">
             <img src="img/integrante3.jpg" alt="Foto de Integrante 3" class="equipe-photo">
-            <h3 class="equipe-name">Integrante 3</h3>
+            <h3 class="equipe-name">Guilherme Zanon</h3>
             <p class="equipe-role">Designer UX/UI</p>
         </div>
         <div class="equipe-item">
             <img src="img/integrante4.jpg" alt="Foto de Integrante 4" class="equipe-photo">
-            <h3 class="equipe-name">Integrante 4</h3>
+            <h3 class="equipe-name">Greece Perdones</h3>
             <p class="equipe-role">Gerente de Projetos</p>
         </div>
         <div class="equipe-item">
             <img src="img/integrante5.jpg" alt="Foto de Integrante 5" class="equipe-photo">
-            <h3 class="equipe-name">Integrante 5</h3>
+            <h3 class="equipe-name">Jakeline Silva</h3>
             <p class="equipe-role">Analista de Qualidade</p>
         </div>
         <div class="equipe-item">
             <img src="img/integrante6.jpg" alt="Foto de Integrante 6" class="equipe-photo">
-            <h3 class="equipe-name">Integrante 6</h3>
+            <h3 class="equipe-name">Nilza Oliveira</h3>
             <p class="equipe-role">Marketing e Comunicação</p>
         </div>
     </div>

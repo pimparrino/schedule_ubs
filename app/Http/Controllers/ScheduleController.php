@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use App\Models\Schedule;
+use App\Models\Ubs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,15 +13,31 @@ class ScheduleController extends Controller
     public function index(){
         $schedules = Schedule::all();
         //$schedules = Schedule::where('user_id', '=' , Auth::id())->get();
+        $user = Auth::user();
+        //dd($user->ubsAsParticipantSchedule);
 
-        return view('schedule.index', compact('schedules'));
+        return view('schedule.index', compact(['schedules','user']));
     }
 
-    public function create(){
-        return view('schedule.create');
+    public function create()
+{
+    $ubsList = Ubs::all(); // Buscar UBS do banco
+    $doctors = Doctor::all(); // Buscar Médicos do banco
+
+    return view('schedule.create', compact('ubsList', 'doctors'));
+
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        // Valida os dados recebidos
+        $validated = $request->validate([
+            'ubs' => 'required|exists:ubs,id',
+            'doctor' => 'required|exists:doctors,id',
+        ]);
+
+
+        
         Schedule::create(
             [
                 'user_id' => Auth::id(),

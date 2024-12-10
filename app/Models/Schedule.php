@@ -10,13 +10,13 @@ class Schedule extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'specialism',
         'doctor_id',
         'ubs_id',
         'date',
         'status',
     ];
 
+    /*
     public function user(){
         return $this->belongsTo(User::class);
     }
@@ -26,6 +26,7 @@ class Schedule extends Model
     }
 
     public function ubs(){
-        return $this->belongsTo(Ubs::class);
+        return $this->belongsToMany(Ubs::class, 'ubs', 'id');
     }
+        */
 }
