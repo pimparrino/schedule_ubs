@@ -12,41 +12,21 @@
     <div class="bg-gray-100 min-h-screen flex items-center justify-center py-10">
         <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-lg">
             <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
-                Selecione a UBS e o Médico
+                Selecione a Especialidade
             </h3>
 
             <!-- Formulário Dinâmico -->
             <form action="{{ route('schedule.store') }}" method="POST" class="space-y-6">
                 @csrf
 
-                <!-- Seleção da UBS -->
-                <div>
-                    <label for="ubs" class="block text-gray-700 font-medium mb-2">
-                        Unidade Básica de Saúde (UBS):
-                    </label>
-                    <select name="ubs" id="ubs" 
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                        required>
-                        <option value="" disabled selected>Selecione uma UBS</option>
-                        @foreach ($ubsList as $ubs)
-                            <option value="{{ $ubs->id }}">{{ $ubs->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
                 <!-- Seleção do Médico -->
                 <div>
-                    <label for="doctor" class="block text-gray-700 font-medium mb-2">
-                        Médico:
-                    </label>
-                    <select name="doctor" id="doctor" 
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                        required>
-                        <option value="" disabled selected>Selecione um Médico</option>
-                        @foreach ($doctors as $doctor)
-                            <option value="{{ $doctor->id }}">{{ $doctor->name }} - {{$doctor->specialism }} </option>
-                        @endforeach
-                    </select>
+                    <div>
+                        <label for="specialism">
+                            Especialista:
+                        </label>
+                        <input type="text" name="specialism" id="specialism" placeholder="Digite qual especialista deseja consultar(ex: dentista)" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
                 </div>
 
                 <!-- Botão de Envio -->

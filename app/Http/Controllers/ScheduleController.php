@@ -13,31 +13,17 @@ class ScheduleController extends Controller
     public function index(){
         $schedules = Schedule::all();
         //$schedules = Schedule::where('user_id', '=' , Auth::id())->get();
-        $user = Auth::user();
-        //dd($user->ubsAsParticipantSchedule);
 
-        return view('schedule.index', compact(['schedules','user']));
+        return view('schedule.index', compact('schedules'));
     }
 
-    public function create()
-{
-    $ubsList = Ubs::all(); // Buscar UBS do banco
-    $doctors = Doctor::all(); // Buscar Médicos do banco
+    public function create(){
+        $doctors = Doctor::all();
 
-    return view('schedule.create', compact('ubsList', 'doctors'));
-
+        return view('schedule.create', compact('doctors'));
     }
 
-    public function store(Request $request)
-    {
-        // Valida os dados recebidos
-        $validated = $request->validate([
-            'ubs' => 'required|exists:ubs,id',
-            'doctor' => 'required|exists:doctors,id',
-        ]);
-
-
-        
+    public function store(Request $request){
         Schedule::create(
             [
                 'user_id' => Auth::id(),
@@ -50,8 +36,10 @@ class ScheduleController extends Controller
 
     public function edit($id){
         $schedule = Schedule::findOrFail($id);
+        $doctors = Doctor::all();
+        $ubsList = Ubs::all();
 
-        return view('schedule.edit', compact('schedule'));
+        return view('schedule.edit', compact('schedule', 'doctors', 'ubsList'));
     }
 
     public function update(Request $request, $id){

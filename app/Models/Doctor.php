@@ -14,12 +14,12 @@ class Doctor extends Model
         'crm',
         'ubs_id'
     ];
-
+    
     public function ubs(){
-        return $this->belongsTo(Ubs::class, 'schedules');
+        return $this->belongsTo(Ubs::class, 'ubs_id');
     }
 
     public function schedules(){
-        return $this->belongsToMany(Schedule::class, 'schedules');
+        return $this->hasMany(Schedule::class, 'doctor_id');
     }
 }

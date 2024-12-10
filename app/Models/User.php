@@ -46,16 +46,8 @@ class User extends Authenticatable
         ];
     }
 
+
     public function schedules(){
         return $this->hasMany(Schedule::class);
-    }
-
-
-    public function doctorAsParticipantSchedule(){
-        return $this->belongsToMany(Doctor::class, 'schedules')->withPivot(['status']);
-    }
-
-    public function ubsAsParticipantSchedule(){
-        return $this->belongsToMany(Ubs::class, 'schedules');
     }
 }

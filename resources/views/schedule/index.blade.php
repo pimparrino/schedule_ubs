@@ -21,17 +21,18 @@
                     <table class="minhatabela">
                         <thead>
                             <tr>
+                                <th>ID</th>
+                                <th>Especialista</th>
                                 <th>Médico</th>
-                                <th>Especialidade</th>
+                                <th>Ubs</th>
                                 <th>Data</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($user->doctorAsParticipantSchedule as $schedule)
-
+                            @foreach($schedules as $schedule)
                             <tr>
-                                <td>{{ $schedule->name }}</td>
+                                <td>{{ $schedule->id }}</td>
                                 <td>{{ $schedule->specialism }}</td>
                                 <td>{{ $schedule->doctor?->name ?? 'Médico não atribuído' }}</td>
                                 <td>{{ $schedule->ubs?->name ?? 'UBS não atribuída' }}</td>

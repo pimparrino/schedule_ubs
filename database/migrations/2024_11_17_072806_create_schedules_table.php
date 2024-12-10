@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
+            $table->string('specialism');
             $table->foreignId('doctor_id')->nullable();
             $table->foreignId('ubs_id')->nullable();
             $table->date('date')->nullable();

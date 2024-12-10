@@ -15,10 +15,10 @@ class Ubs extends Model
     ];
     
     public function doctors(){
-        return $this->hasMany(Doctor::class, 'schedules');
+        return $this->hasMany(Doctor::class, 'id');
     }
 
-    public function ubs(){
-        return $this->hasMany(Schedule::class, 'schedules');
+    public function schedules(){
+        return $this->hasMany(Schedule::class);
     }
 }
