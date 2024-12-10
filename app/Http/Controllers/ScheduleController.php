@@ -33,7 +33,7 @@ class ScheduleController extends Controller
     public function edit($id){
         $schedule = Schedule::findOrFail($id);
 
-        return view('schedule.edit', compact('schedules'));
+        return view('schedule.edit', compact('schedule'));
     }
 
     public function update(Request $request, $id){
@@ -52,12 +52,10 @@ class ScheduleController extends Controller
             'status' => 'confirmado'
         ]);
 
-        return redirect('/schedule')->with('sucess', 'Agendamento confirmado!');
+        return redirect('/dashboard')->with('sucess', 'Agendamento confirmado!');
     }
 
     public function pending(){
-        dd("chegou");
-        
         $schedules = Schedule::where('status', 'pendente')->get();
 
         return view('schedule.pending', compact('schedules'));

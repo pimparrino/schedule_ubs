@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot>
+    <x-slot name="header">
         <h2>{{ __('Confirmar Agendamento') }}</h2>
     </x-slot>
 
@@ -28,7 +28,7 @@
                     </div>
 
                     <div>
-                        <input type="date" value="Confirmar Agendamento">
+                        <input type="submit" value="Confirmar Agendamento">
                     </div>
                 </form>
             </section>

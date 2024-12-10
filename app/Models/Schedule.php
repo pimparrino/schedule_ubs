@@ -13,7 +13,7 @@ class Schedule extends Model
         'specialism',
         'doctor_id',
         'ubs_id',
-        'data',
+        'date',
         'status',
     ];
 

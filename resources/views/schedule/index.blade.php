@@ -36,7 +36,7 @@
                                 <td>{{ $schedule->specialism }}</td>
                                 <td>{{ $schedule->doctor_id }}</td>
                                 <td>{{ $schedule->ubs_id }}</td>
-                                <td>{{ $schedule->date }}</td>
+                                <td>{{ Carbon\Carbon::parse($schedule->date)->format('d/m/Y') }}</td>
                                 <td>{{ $schedule->status }}</td>
                             </tr>
                             @endforeach

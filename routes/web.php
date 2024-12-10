@@ -27,7 +27,7 @@ Route::post('/schedule/store', [ScheduleController::class, 'store'])->middleware
 
 Route::get('/schedule/{id}', [ScheduleController::class, 'edit'])->middleware(['auth'])->can('isAttendant')->name('schedule.edit');
 Route::put('/schedule/update/{id}', [ScheduleController::class, 'update'])->middleware(['auth'])->can('isAttendant')->name('schedule.update');
-Route::get('/schedule/pending', [ScheduleController::class, 'pending'])->middleware(['auth'])->can('isAttendant')->name('schedule.pending');
+Route::get('/schedules/pending', [ScheduleController::class, 'pending'])->middleware(['auth'])->can('isAttendant')->name('schedule.pending');
 
 
 Route::get('/ubs', [UbsController::class, 'index'])->middleware(['auth'])->name('ubs.index');
